@@ -202,3 +202,115 @@ footer {
 footer p {
     margin: 0;
 }
+/* styles.css */
+
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 头部样式 */
+header {
+    background: #007bff;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background: #218838;
+}
+
+/* 用户信息样式 */
+#user-info {
+    display: flex;
+    align-items: center;
+}
+
+#user-info p {
+    margin: 0 10px 0 0;
+}
+
+#user-info a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#user-info a:hover {
+    text-decoration: underline;
+}
+
+/* 页脚部分 */
+footer {
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}

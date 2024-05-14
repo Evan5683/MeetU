@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
 }
 
@@ -18,7 +18,7 @@ body {
 
 /* 头部样式 */
 header {
-    background: #007bff;
+    background: #4CAF50;
     color: #fff;
     text-align: center;
     padding: 60px 0;
@@ -33,53 +33,80 @@ header p {
     font-size: 1.2em;
 }
 
-/* 注册表单部分 */
-#register {
+/* 注册和登录部分 */
+#register-login {
     background: #fff;
     padding: 40px 0;
     text-align: center;
 }
 
-#register h2 {
-    color: #007bff;
+.form-container {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 45%;
+    margin: 0 2.5%;
+    vertical-align: top;
+}
+
+h2 {
+    color: #4CAF50;
     margin-bottom: 20px;
 }
 
 form {
-    background: #f4f4f4;
+    background: #fff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    width: 50%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 input {
-    width: 90%;
-    padding: 10px;
+    width: 100%;
+    padding: 15px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 button {
-    width: 95%;
-    padding: 10px;
-    background: #007bff;
+    width: 100%;
+    padding: 15px;
+    background: #4CAF50;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 button:hover {
-    background: #0056b3;
+    background: #45a049;
+}
+
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* 页脚部分 */
 footer {
-    background: #007bff;
+    background: #4CAF50;
     color: #fff;
     text-align: center;
     padding: 20px 0;

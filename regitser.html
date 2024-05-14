@@ -3,28 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeetU - Register</title>
+    <title>MeetU - Register/Login</title>
     <link rel="stylesheet" href="css/register.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Check if user is logged in and display username -->
     <header>
         <div class="container">
-            <h1>Register</h1>
-            <p>Join MeetU and start making new friends today</p>
+            <h1 id="greeting"></h1>
+            <p id="login-info"></p>
         </div>
     </header>
 
-    <!-- Registration Form Section -->
-    <section id="register">
+    <!-- Registration and Login Section -->
+    <section id="register-login">
         <div class="container">
-            <h2>Create Your Account</h2>
-            <form action="register.html" method="post">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Sign Up</button>
-            </form>
+            <div class="form-container" id="login-container">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" onclick="showRegisterForm()">Register here</a></p>
+            </div>
+            <div class="form-container" id="register-container" style="display: none;">
+                <h2>Register</h2>
+                <form id="register-form">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="#" onclick="showLoginForm()">Login here</a></p>
+            </div>
         </div>
     </section>
 
@@ -34,5 +46,59 @@
             <p>&copy; 2024 MeetU. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Check if user is logged in (dummy example, replace with real authentication logic)
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            document.getElementById('greeting').innerText = `Welcome, ${user.name}`;
+            document.getElementById('login-info').innerHTML = '<a href="#" onclick="logout()">Logout</a>';
+        }
+
+        // Show register form
+        function showRegisterForm() {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('register-container').style.display = 'block';
+        }
+
+        // Show login form
+        function showLoginForm() {
+            document.getElementById('register-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        }
+
+        // Handle registration
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = event.target.name.value;
+            const email = event.target.email.value;
+            const password = event.target.password.value;
+            // Dummy example, replace with real registration logic
+            localStorage.setItem('user', JSON.stringify({ name, email }));
+            alert('Registration successful. Please log in.');
+            showLoginForm();
+        });
+
+        // Handle login
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = event.target.email.value;
+            const password = event.target.password.value;
+            // Dummy example, replace with real login logic
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user && user.email === email) {
+                alert(`Welcome back, ${user.name}`);
+                window.location.href = 'index.html'; // Redirect to homepage
+            } else {
+                alert('Invalid email or password');
+            }
+        });
+
+        // Handle logout
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.reload();
+        }
+    </script>
 </body>
 </html>
